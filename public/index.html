@@ -16,8 +16,11 @@
       <button ng-click='wmp.addRecord()'>Add</button>
       <button ng-click='wmp.getRecords()'>Read</button>
       <div ng-repeat="people in wmp.allTheRecords">
-        <h3>{{people.name}}</h3>
-        <p>{{people.location}}</p>
+        <div>
+          <h3>{{people.name}}</h3>
+          <p>{{people.location}}</p>
+          <button ng-click="wmp.deleteRecord(people._id)">Delete</button>
+        </div>
       </div>
     </div>
   </body>

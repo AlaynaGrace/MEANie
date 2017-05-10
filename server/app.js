@@ -40,3 +40,15 @@ app.post( '/testPost', function( req, res ){
   newRecord.save();
   res.sendStatus(201); // added a send status
 });
+
+app.delete('/deleteRecord/:id',function(req,res){
+  console.log('got this:',req.params.id);
+  ourModel.remove({_id: req.params.id},function(err){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.send(200);
+    }
+  });
+});
