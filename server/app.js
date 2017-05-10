@@ -38,4 +38,5 @@ app.post( '/testPost', function( req, res ){
 // create new record
   var newRecord = ourModel( recordToAdd );
   newRecord.save();
+  res.sendStatus(201); // added a send status
 });
