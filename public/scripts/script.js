@@ -27,10 +27,11 @@ myApp.controller( 'WhereMyPeeps', function( $http ){ //['$http'] was taken out
       method: 'GET',
       url: '/getRecords',
     }).then( function mySuccess( response ){
-      vm.allTheRecords = response;
+      vm.allTheRecords = response.data;
       console.log( vm.allTheRecords );
     }, function myError( response ){
       console.log( response.statusText );
     });
   };
+  vm.getRecords();
 });
